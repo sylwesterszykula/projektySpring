@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="someBean" class="impl.SomeBean">
+<!-- 		ctrl + shift + c -->
+<!-- 		<constructor-arg value="1"></constructor-arg> -->
+<!-- 		<constructor-arg value="2"></constructor-arg> -->
+
+<!-- 		<constructor-arg type="java.lang.String" value="1"></constructor-arg> -->
+<!-- 		<constructor-arg value="2"></constructor-arg> -->
+
+		<constructor-arg name="name" value="Sylwek"></constructor-arg>
+		<constructor-arg name="number" value="22"></constructor-arg>
+
+<!-- 		<constructor-arg index="0" value="1"></constructor-arg> -->
+<!-- 		<constructor-arg index="1" value="Sylwek"></constructor-arg> -->
+	</bean>
+</beans>

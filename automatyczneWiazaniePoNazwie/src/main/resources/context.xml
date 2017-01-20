@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id="injectionBean1" class="main.InjectionBean">
+		<property name="name" value="Nazwa1"></property>
+	</bean>
+	<bean id="injectionBean2" class="main.InjectionBean">
+		<property name="name" value="Nazwa2"></property>
+	</bean>
+
+	<bean id="someBean" class="main.SomeBean" autowire="byName">
+		<!-- <property name="injectionBean2" ref="injectionBean1"></property> jezeli chcemy nadpisac beana 1 obiekterm z beana 2-->
+	</bean>
+
+</beans>

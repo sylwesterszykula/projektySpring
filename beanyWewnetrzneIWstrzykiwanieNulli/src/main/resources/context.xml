@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="someUser" class="main.User">
+		<property name="address">
+			<bean class="main.Address">
+				<constructor-arg name="locality" value="Krasnobrod" />
+				<constructor-arg name="street" value="Tomaszowska" />
+				<constructor-arg name="streetNumber" value="120" />
+				<constructor-arg name="zipCode" value="22-440" />
+			</bean>
+		</property>
+		<constructor-arg name="name" value="Sylwek"/>
+	</bean>
+	
+	<bean id="someUserNULL" class="main.User">
+		<constructor-arg>
+			<null></null>
+		</constructor-arg>
+	</bean>
+</beans>

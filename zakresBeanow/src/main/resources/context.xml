@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+		
+		<bean id="userRepo" class="main.UserRepo" scope="singleton"/>
+		<!-- 	prototype - kazde wywolanie tego beana powoduje ze dostaniemy rozne obiekty
+				singleton - dostaniemy zawsze ten sam -->
+		
+		<bean id="component1" class="main.Component1" scope="singleton">
+			<property name="userRepo" ref="userRepo"/>
+		</bean>
+		
+		<bean id="component2" class="main.Component2" scope="singleton">
+			<property name="userRepo" ref="userRepo"></property>
+		</bean>
+</beans>
