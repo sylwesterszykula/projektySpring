@@ -13,6 +13,7 @@ public class MainSpring {
 
 		UserRepoImpl bean = context.getBean("userRepoImpl", UserRepoImpl.class);
 		bean.createUser("Sylwek");
+		bean.createUser("Sylwek2");
 	}
 
 }
