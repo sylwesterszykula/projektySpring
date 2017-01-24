@@ -3,6 +3,7 @@ package wstrzykiwanieWartosciAdnotacjami.impl;
 import javax.annotation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import wstrzykiwanieWartosciAdnotacjami.api.Logger;
@@ -19,9 +20,18 @@ public class UserRepoImpl implements UserRepo {
 									// moze byc)
 	private Logger logger;
 
+	@Value("${database.host}")
+	private String host;
+	@Value("${database.port}")
+	private int port;
+	@Value("${database.name}")
+	private String database;
+	// jezeli pobieramy z JVM to struktura bedzie taka sama tylko
+	// #{systemProperties['nazwa']}
+
 	public User createUser(String name) {
 		if (logger != null) {
-			logger.login("Tworzenie uzytkownika " + name);
+			logger.login("Dodawanie uzytkownika " + name + " do bazy " + host + ":" + port + "/" + database);
 		}
 		return new User(name);
 
